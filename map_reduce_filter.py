@@ -1,44 +1,40 @@
+
+# map
+#
+# def fact(n):
+#     if n==1 or n==0:
+#         return 1
+#     else:
+#         return  n*fact(n-1);
+#
+#
+# print(fact(5));
+#
+# l=map(fact,[1,2,3,4])
+#
+# print(list(l))
+#
+# def add(a,b):
+#     return a+b
+#
+# a=map(add,("ritesh","umesh"),("jadhav","jadhav"))
+#
+# print(list(a))
+
+# filter
+#
+# def even(n):
+#     return n%2==0
+#
+# y=filter(even,[12,23,44,23,45,66,47,84])
+#
+# print(list(y))
+
+
+# reduce
+
 from functools import reduce
 
-# iterable
-patients_dob = ['21-01-1998', '26-10-1999', '03-06-1950']
-curr_yr = 2022
+x=reduce(lambda x,y:x+y,range(1,6))
 
-# function that works on a single item
-def get_yob(dob):
-    return dob.split('-')[2]
-
-# map function takes the above function and applies it to each item i the iterable
-patients_yob = list(map(get_yob, patients_dob))
-print(patients_yob)
-
-def find_age(yob):
-    return curr_yr - int(yob)
-
-ages = list(map(find_age, patients_yob))
-print(ages)
-
-def is_major(age):
-    return age >= 18
-
-age_status = list(map(is_major, ages))
-print(age_status)
-
-adult_patients_ages = list(filter(is_major, ages))
-print(adult_patients_ages)
-
-# reduce example
-age_list = [23, 34, 45, 56]
-def add(a, b):
-    return a+b
-age_sum = reduce(add, age_list)
-print(age_sum)
-
-def average_age1(ages):
-    return reduce(add, ages) / len(ages)
-
-def average_age2(ages):
-    return reduce(lambda age1, age2: age1 + age2, ages) / len(ages)
-
-print(average_age1(age_list))
-print(average_age2(age_list))
+print(x)
