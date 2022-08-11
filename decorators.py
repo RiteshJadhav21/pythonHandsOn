@@ -7,9 +7,11 @@ def fun1(fun2):
         print("after working")
     return fun3
 
-@fun1
+# @fun1
 def work():
     print("I'm working")
+
+# work = fun1(work);
 
 work()
 
